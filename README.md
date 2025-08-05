@@ -98,15 +98,28 @@ Future Improvements (Planned)
 
 Folder Structure
 
-USIU_Smart_Campus_Navigator/
+UUSIU_Smart_Campus_Navigator/
 │
-├── app.py
-├── combined_car_routes_named.geojson
-├── combined_pedestrian_routes_named.geojson
-├── route_map.html
-├── README.md
-├── requirements.txt
-├── LICENSE
+├── data/
+│   ├── combined_car_routes_named.geojson
+│   ├── combined_pedestrian_routes_named.geojson
+│   └── (any other raw or processed data files)
+│
+├── notebooks/
+│   └── exploratory_analysis.ipynb       # Jupyter notebooks for analysis or prototyping
+│
+├── src/
+│   ├── app.py                          # Main application script
+│   └── utils.py                       # helper functions, e.g., graph building, routing
+│
+├── tests/
+│   └── test_routing.py                # tests for your routing functions
+│
+├── .gitignore                        # To exclude files like __pycache__, .env, large data files
+├── README.md                         # Project README file (you just got it!)
+├── requirements.txt                  # List of Python dependencies for easy install
+└── LICENSE                          # License file (e.g., MIT License)
+
 
 License
 
