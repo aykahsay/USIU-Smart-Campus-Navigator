@@ -43,16 +43,28 @@ The system considers **real-time conditions** such as time of day, human or vehi
 ## 📂 Folder Structure
 
 ```
-usiu-routing-app/
+USIU_Smart_Campus_Navigator/
 │
 ├── data/
-│   └── combined_usiu_paths.geojson      # Path network with geometry and metadata
+│   ├── combined_car_routes_named.geojson
+│   ├── combined_pedestrian_routes_named.geojson
+│   └── (any other raw or processed data files)
 │
-├── main.py                              # Entry point for route calculation
-├── utils.py                             # Helper functions for routing and visualization
-├── admin.py                             # Admin utilities for enabling/disabling paths
-├── config.py                            # Time/day conditions, accessibility rules
-└── README.md                            # This file
+├── notebooks/
+│   └── exploratory_analysis.ipynb       # Optional Jupyter notebooks for analysis or prototyping
+│
+├── src/
+│   ├── app.py                          # Main application script
+│   └── utils.py                       # Optional: helper functions, e.g., graph building, routing
+│
+├── tests/
+│   └── test_routing.py                # Optional: tests for your routing functions
+│
+├── .gitignore                        # To exclude files like __pycache__, .env, large data files
+├── README.md                         # Project README file (you just got it!)
+├── requirements.txt                  # List of Python dependencies for easy install
+└── LICENSE                          # License file (e.g., MIT License)
+                          # This file
 ```
 
 ---
