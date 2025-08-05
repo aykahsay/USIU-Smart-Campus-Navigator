@@ -1,0 +1,34 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>USIU Smart Campus Navigator</title>
+</head>
+<body>
+    <h2>USIU Campus Routing System</h2>
+    <form method="POST">
+        <label for="mode">Mode:</label>
+        <select name="mode">
+            <option value="car">Car</option>
+            <option value="pedestrian">Pedestrian</option>
+        </select><br><br>
+
+        <label for="start">Start Location:</label>
+        <select name="start">
+            {% for loc in locations %}
+                <option value="{{ loc }}">{{ loc }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="end">End Location:</label>
+        <select name="end">
+            {% for loc in locations %}
+                <option value="{{ loc }}">{{ loc }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <button type="submit">Find Route</button>
+    </form>
+</body>
+</html>

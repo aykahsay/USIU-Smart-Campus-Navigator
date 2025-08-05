@@ -1,0 +1,24 @@
+<!-- templates/result.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Route Results</title>
+</head>
+<body>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% else %}
+        <h3>Shortest Path:</h3>
+        <ol>
+            {% for node in path %}
+                <li>{{ node }}</li>
+            {% endfor %}
+        </ol>
+
+        <iframe src="{{ map_file }}" width="100%" height="500"></iframe>
+    {% endif %}
+
+    <br><a href="/">🔙 Back</a>
+</body>
+</html>

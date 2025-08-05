@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>USIU Smart Campus Navigator</title>
+</head>
+<body>
+    <h1>🧭 USIU Smart Campus Navigator</h1>
+    <form method="POST">
+        <label>Start Coordinates (lon, lat):</label><br>
+        <input type="text" name="start" required><br><br>
+
+        <label>End Coordinates (lon, lat):</label><br>
+        <input type="text" name="end" required><br><br>
+
+        <label>Mode:</label><br>
+        <select name="mode">
+            <option value="regular">Regular</option>
+            <option value="wheelchair">Wheelchair Accessible</option>
+        </select><br><br>
+
+        <button type="submit">Find Route</button>
+    </form>
+
+    <p>{{ message }}</p>
+
+    {% if show_map %}
+        <iframe src="{{ url_for('static', filename='route_map.html') }}" width="100%" height="600"></iframe>
+    {% endif %}
+</body>
+</html>
