@@ -1,132 +1,113 @@
-# USIU-Smart-Campus-Navigator
-An Intelligent Route Mapping System for USIU-Africa Visitors and Community
+# USIU Smart Campus Navigator
 
-# 📍 USIU Smart Campus Routing Application
-
-## 🗺️ Overview
-
-This application provides intelligent navigation within the **United States International University (USIU)** campus. It helps **visitors, staff, students, and persons with disabilities** find optimal routes between buildings, parking lots, fire assembly points, gates, outdoor game zones, and other venues.
-
-The system considers **real-time conditions** such as time of day, human or vehicle traffic, wheelchair accessibility, and the user's **mode of transport (walking or driving)**. It supports both **single-destination** and **multi-destination** routing, and visualizes recommended paths on a map.
+A Python-based route mapping tool to help users find the shortest paths between locations on the USIU campus using car or pedestrian routes.
 
 ---
 
-## ✅ Key Features
+## Features
 
-- 🔎 **Route Recommendation**: Provides best paths based on:
-  - Distance (shortest)
-  - Estimated traffic (human/vehicle)
-  - Time/day (e.g., class transition hours)
-  - Wheelchair accessibility
-  - Mode of transport (walking vs. driving)
-
-- 🧭 **Multi-Destination Routing**: Calculates the best sequence and path to visit multiple venues.
-
-- 🧠 **Heuristic Routing**: Uses **Euclidean distance** for quick estimations.
-
-- 🚧 **Admin Control**: Admin can **temporarily disable paths** under construction or unusable.
-
-- 🗺️ **Interactive Map Visualization**: Displays routes, venues, and user paths using **GeoJSON and GeoPandas**.
+- Supports two modes: **Car** and **Pedestrian** routing  
+- Loads combined GeoJSON route data for each mode  
+- Builds an undirected graph of campus paths using NetworkX  
+- Calculates shortest path using Euclidean distance as edge weight  
+- Interactive CLI to select mode, start, and end locations  
+- Generates an interactive HTML map with the calculated route using Folium  
+- Optionally opens the generated route map in a web browser  
 
 ---
 
-## 🛠️ Tech Stack
+## Requirements
 
-- **Python** (3.11+)
-- **GeoPandas** – for geospatial data handling
-- **NetworkX** – for graph-based path computation
-- **Matplotlib / Folium** – for route visualization
-- **Shapely** – for geometric operations
+- Python 3.10 or higher  
+- Python libraries:
+  - geopandas  
+  - networkx  
+  - folium  
+  - shapely  
 
----
+Install dependencies with:
 
-## 📂 Folder Structure
+```bash
+pip install geopandas networkx folium shapely
 
-```
+Setup & Usage
+
+    Place the following files in your project folder (e.g., USIU_Smart_Campus_Navigator/):
+
+        app.py
+
+        combined_car_routes_named.geojson
+
+        combined_pedestrian_routes_named.geojson
+
+    Run the app:
+
+python app.py
+
+    Follow prompts in the terminal:
+
+        Select routing mode (car or pedestrian)
+
+        View available locations for the selected mode
+
+        Enter exact start location name
+
+        Enter exact end location name
+
+        Choose whether to open the route map in your browser
+
+Data Format
+
+The GeoJSON files should contain features with:
+
+    start_name: Name of the starting point
+
+    end_name: Name of the ending point
+
+    route_name: (optional) Route identifier
+
+    geometry: A LineString representing the path
+
+How It Works
+
+    Graph Building: The app reads the GeoJSON routes and creates an undirected graph where nodes are locations and edges are routes weighted by straight-line (Euclidean) distance.
+
+    Routing: Uses NetworkX’s shortest path algorithm to find the minimal-distance route between selected locations.
+
+    Visualization: The route is drawn on a Folium map saved as route_map.html. Markers show start and end points, and the path is highlighted.
+
+Current Limitations
+
+    Only supports shortest path by Euclidean distance (no real traffic or time considerations yet).
+
+    Routing is bidirectional on all paths (no one-way streets).
+
+    Interaction is via command-line interface (no GUI or mobile app yet).
+
+    No multi-destination or accessibility filtering implemented yet.
+
+Future Improvements (Planned)
+
+    Support for multi-stop routing optimization
+
+    Real-time data integration for traffic or accessibility
+
+    Web or mobile app interface with interactive UI
+
+    Admin features to disable or update routes dynamically
+
+Folder Structure
+
 USIU_Smart_Campus_Navigator/
 │
-├── data/
-│   ├── combined_car_routes_named.geojson
-│   ├── combined_pedestrian_routes_named.geojson
-│   └── (any other raw or processed data files)
-│
-├── notebooks/
-│   └── exploratory_analysis.ipynb       # Jupyter notebooks for analysis or prototyping
-│
-├── src/
-│   ├── app.py                          # Main application script
-│   └── utils.py                       # helper functions, e.g., graph building, routing (Future work)
-│
-├── tests/
-│   └── test_routing.py                # Otests for your routing functions ((Future work)
-│
-├── .gitignore                        # To exclude files like __pycache__, .env, large data files
-├── README.md                         # Project README file (you just got it!)
-├── requirements.txt                  # List of Python dependencies for easy install
-└── LICENSE                          # License file (e.g., MIT License)
-                          # This file
-```
+├── app.py
+├── combined_car_routes_named.geojson
+├── combined_pedestrian_routes_named.geojson
+├── route_map.html
+├── README.md
+├── requirements.txt
+├── LICENSE
 
----
+License
 
-## 🚀 Getting Started
-
-### 1. 📥 Installation
-
-Ensure Python is installed, then:
-
-```bash
-pip install geopandas networkx matplotlib shapely
-```
-
-### 2. 📂 Prepare Your Data
-
-Ensure `combined_usiu_paths.geojson` is placed inside the `data/` folder.
-
-Each feature must have:
-
-- `geometry`: LineString for paths
-- `name`: Path or location name
-- `length_m`: Length in meters
-- `accessible`: Boolean for wheelchair access
-- `vehicle`: Boolean for vehicle access
-
-### 3. 🧪 Run Example
-
-```bash
-python main.py
-```
-
-Follow the prompts to select:
-
-- Start & destination
-- Time & day
-- Transport mode
-- Accessibility preference
-
----
-
-## 🧮 How Routing Works
-
-1. **Graph Construction**: Converts LineString paths into a weighted graph using `NetworkX`.
-2. **Weight Assignment**: Weights depend on:
-   - Path length
-   - Traffic estimates based on time/day
-   - Access type (e.g., walking vs. driving)
-3. **Shortest Path Algorithm**: Uses `Dijkstra` or `A*` with Euclidean heuristic.
-4. **Visualization**: Highlights recommended route(s) on the map.
-
----
-
-## 🛑 Admin Features
-
-- Disable or re-enable any path using `admin.py`.
-- Temporarily removed paths are ignored during routing.
-
----
-
-## 📊 Future Improvements
-
-- Real-time data integration (e.g., crowd sensors or gate logs)
-- Mobile/web interface with interactive UI
-- Voice-guided navigation for visually impaired users
+MIT License © Amabchow and Samuel
