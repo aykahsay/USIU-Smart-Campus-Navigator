@@ -51,14 +51,14 @@ USIU_Smart_Campus_Navigator/
 │   └── (any other raw or processed data files)
 │
 ├── notebooks/
-│   └── exploratory_analysis.ipynb       # Optional Jupyter notebooks for analysis or prototyping
+│   └── exploratory_analysis.ipynb       # Jupyter notebooks for analysis or prototyping
 │
 ├── src/
 │   ├── app.py                          # Main application script
-│   └── utils.py                       # Optional: helper functions, e.g., graph building, routing
+│   └── utils.py                       # helper functions, e.g., graph building, routing (Future work)
 │
 ├── tests/
-│   └── test_routing.py                # Optional: tests for your routing functions
+│   └── test_routing.py                # Otests for your routing functions ((Future work)
 │
 ├── .gitignore                        # To exclude files like __pycache__, .env, large data files
 ├── README.md                         # Project README file (you just got it!)
