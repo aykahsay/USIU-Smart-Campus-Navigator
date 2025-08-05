@@ -1,1 +1,9 @@
+__pycache__/
+*.pyc
+.env
+.ipynb_checkpoints/
+*.sqlite3
+*.log
+*.DS_Store
+data/*.geojson
 
