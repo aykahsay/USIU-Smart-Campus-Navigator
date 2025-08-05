@@ -6,14 +6,24 @@ A Python-based route mapping tool to help users find the shortest paths between 
 
 ## Features
 
-- Supports two modes: **Car** and **Pedestrian** routing  
-- Loads combined GeoJSON route data for each mode  
-- Builds an undirected graph of campus paths using NetworkX  
-- Calculates shortest path using Euclidean distance as edge weight  
-- Interactive CLI to select mode, start, and end locations  
-- Generates an interactive HTML map with the calculated route using Folium  
-- Optionally opens the generated route map in a web browser  
+# 🧭 USIU Smart Campus Navigator
 
+An intelligent navigation tool for guiding visitors, staff, and students around the **USIU-Africa** campus using interactive maps and shortest-path routing.
+
+---
+
+## 🚀 Features
+
+- 🔀 **Mode Selection**: Choose between **car** or **pedestrian** navigation
+- 🗺️ **Interactive Map Generation**: Visual route is rendered using **Folium**
+- 📍 **Shortest Path Calculation**: Routes optimized using **Euclidean distance**
+- 🧠 **Geospatial Graph Construction**: Automatically built from **GeoJSON**
+- 🔎 **Location Listing**: Lists all available campus locations to choose from
+- 🌐 **Auto Launch Map**: Optionally open route map directly in browser
+
+---
+
+## 📁 Project Structure
 ---
 
 ## Requirements
