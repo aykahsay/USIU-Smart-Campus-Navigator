@@ -1,136 +1,127 @@
-# USIU Smart Campus Navigator
-
-A Python-based route mapping tool to help users find the shortest paths between locations on the USIU campus using car or pedestrian routes.
+Here’s a complete and professional `README.md` file for your GitHub project: **USIU Smart Campus Navigator**. You can copy and paste it into your repo root.
 
 ---
 
-## Features
-
+```markdown
 # 🧭 USIU Smart Campus Navigator
 
-An intelligent navigation tool for guiding visitors, staff, and students around the **USIU-Africa** campus using interactive maps and shortest-path routing.
+An intelligent campus map system for **United States International University - Africa (USIU-Africa)**. This application helps students, staff, and visitors find optimal routes between various buildings, gates, parking lots, sports fields, and more — whether walking, driving, or using a wheelchair.
 
 ---
 
-## 🚀 Features
+## 📌 Features
 
-- 🔀 **Mode Selection**: Choose between **car** or **pedestrian** navigation
-- 🗺️ **Interactive Map Generation**: Visual route is rendered using **Folium**
-- 📍 **Shortest Path Calculation**: Routes optimized using **Euclidean distance**
-- 🧠 **Geospatial Graph Construction**: Automatically built from **GeoJSON**
-- 🔎 **Location Listing**: Lists all available campus locations to choose from
-- 🌐 **Auto Launch Map**: Optionally open route map directly in browser
+- 🗺️ Interactive map powered by **Folium** + **OpenStreetMap**
+- 🧠 Smart route recommendations:
+  - Based on **mode of transport**: Pedestrian, Car, Wheelchair
+  - Considers **time/day context** (e.g. after class, weekends)
+  - Uses **shortest path** and **A* heuristic (Euclidean distance)**
+- ♿ Wheelchair accessibility
+- ➕ Multi-stop routing (Traveling Salesman-style)
+- 🛠️ Admin functionality to **disable/enable paths** temporarily
+- 📍 Visual highlights of:
+  - Start location
+  - Destination
+  - Suggested route
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
+
+```
+
+USIU-Map-Navigator/
+├── app.py                       # Flask application (main backend)
+├── view\_nodes\_on\_osm.py        # Visualize nodes + edges on map
+├── data/
+│   └── combined\_cleaned\_routes.geojson   # Merged cleaned routing data
+├── static/
+│   └── node\_map\_osm.html       # Auto-generated Folium map
+├── templates/
+│   ├── index.html              # Homepage form
+│   └── route\_map.html          # Map with selected route
+├── requirements.txt
+└── README.md
+
+````
+
 ---
 
-## Requirements
+## 🚀 Setup & Run Locally
 
-- Python 3.10 or higher  
-- Python libraries:
-  - geopandas  
-  - networkx  
-  - folium  
-  - shapely  
+### 🛠️ Requirements
 
-Install dependencies with:
+- Python 3.10+
+- Flask
+- GeoPandas
+- NetworkX
+- Folium
+- Pyogrio
+- Shapely
+
+### 🔽 Install dependencies
 
 ```bash
-pip install geopandas networkx folium shapely
+pip install -r requirements.txt
+````
 
-Setup & Usage
+### ▶️ Run the app
 
-    Place the following files in your project folder (e.g., USIU_Smart_Campus_Navigator/):
-
-        app.py
-
-        combined_car_routes_named.geojson
-
-        combined_pedestrian_routes_named.geojson
-
-    Run the app:
-
+```bash
 python app.py
+```
 
-    Follow prompts in the terminal:
+Then open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 
-        Select routing mode (car or pedestrian)
+---
 
-        View available locations for the selected mode
+## 🧪 Usage Instructions
 
-        Enter exact start location name
+1. Select:
 
-        Enter exact end location name
+   * **Start Location**
+   * **End Location**
+   * **Mode of Transport** (Pedestrian / Car / Wheelchair)
+2. Click **Submit**
+3. View the **optimal route on the map**
 
-        Choose whether to open the route map in your browser
+---
 
-Data Format
+## 🗂️ Data Sources
 
-The GeoJSON files should contain features with:
+* All paths and routing data were downloaded and cleaned from **OpenStreetMap (OSM)**.
+* File format: `GeoJSON`
+* Each route represents a `LineString` from a named origin to destination.
 
-    start_name: Name of the starting point
+---
 
-    end_name: Name of the ending point
+## 🧹 Node Cleaning and Standardization
 
-    route_name: (optional) Route identifier
+Common typos and duplicate names were cleaned with a standardized mapping, e.g.:
 
-    geometry: A LineString representing the path
+* `Adminstartion Block` → `Administration Block`
+* `Frieda Brown  Student Centere Parking Lot` → `Frieda Brown Student Center Parking Lot`
+* `Pual's Caffe` → `Paul's Caffe`
 
-How It Works
+---
 
-    Graph Building: The app reads the GeoJSON routes and creates an undirected graph where nodes are locations and edges are routes weighted by straight-line (Euclidean) distance.
+## 📈 Future Enhancements
 
-    Routing: Uses NetworkX’s shortest path algorithm to find the minimal-distance route between selected locations.
+* 🧭 Indoor navigation within buildings
+* 📅 Dynamic congestion levels based on timetable
+* 🧠 ML-powered recommendations
+* 📱 Android mobile version
 
-    Visualization: The route is drawn on a Folium map saved as route_map.html. Markers show start and end points, and the path is highlighted.
+---
 
-Current Limitations
+## 🤝 Contributions
 
-    Only supports shortest path by Euclidean distance (no real traffic or time considerations yet).
+Contributions are welcome. Please open an issue first to discuss changes or improvements.
 
-    Routing is bidirectional on all paths (no one-way streets).
+---
 
-    Interaction is via command-line interface (no GUI or mobile app yet).
+## © License
 
-    No multi-destination or accessibility filtering implemented yet.
+This project is developed for academic and educational use under the MIT License.
 
-Future Improvements (Planned)
-
-    Support for multi-stop routing optimization
-
-    Real-time data integration for traffic or accessibility
-
-    Web or mobile app interface with interactive UI
-
-    Admin features to disable or update routes dynamically
-
-Folder Structure
-
-UUSIU_Smart_Campus_Navigator/
-│
-├── data/
-│   ├── combined_car_routes_named.geojson
-│   ├── combined_pedestrian_routes_named.geojson
-│   └── (any other raw or processed data files)
-│
-├── notebooks/
-│   └── exploratory_analysis.ipynb       # Jupyter notebooks for analysis or prototyping
-│
-├── src/
-│   ├── app.py                          # Main application script
-│   └── utils.py                       # helper functions, e.g., graph building, routing
-│
-├── tests/
-│   └── test_routing.py                # tests for your routing functions
-│
-├── .gitignore                        # To exclude files like __pycache__, .env, large data files
-├── README.md                         # Project README file (you just got it!)
-├── requirements.txt                  # List of Python dependencies for easy install
-└── LICENSE                          # License file (e.g., MIT License)
-
-
-License
-
-MIT License © Amabchow and Samuel
+```
