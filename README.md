@@ -3,6 +3,7 @@
 An intelligent campus map system for **United States International University - Africa (USIU-Africa)**. This application helps students, staff, and visitors find optimal routes between various buildings, gates, parking lots, sports fields, and more — whether walking, driving, or using a wheelchair.
 
 ---
+<img width="993" height="682" alt="image" src="https://github.com/user-attachments/assets/6c2032e1-fae2-410c-8425-643162f79618" />
 
 ## 📌 Features
 
