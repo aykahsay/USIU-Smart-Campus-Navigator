@@ -1,8 +1,3 @@
-Here’s a complete and professional `README.md` file for your GitHub project: **USIU Smart Campus Navigator**. You can copy and paste it into your repo root.
-
----
-
-```markdown
 # 🧭 USIU Smart Campus Navigator
 
 An intelligent campus map system for **United States International University - Africa (USIU-Africa)**. This application helps students, staff, and visitors find optimal routes between various buildings, gates, parking lots, sports fields, and more — whether walking, driving, or using a wheelchair.
