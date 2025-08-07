@@ -84,7 +84,9 @@ Then open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 ---
 
 ## 🗂️ Data Sources
-
+This project uses spatial data from [OpenStreetMap](https://www.openstreetmap.org) and custom digitization of the USIU-Africa campus layout.
+- OpenStreetMap contributors. (n.d.). OpenStreetMap. https://www.openstreetmap.org
+- Custom digitized data prepared manually in QGIS by the project team.
 * All paths and routing data were downloaded and cleaned from **OpenStreetMap (OSM)**.
 * File format: `GeoJSON`
 * Each route represents a `LineString` from a named origin to destination.
