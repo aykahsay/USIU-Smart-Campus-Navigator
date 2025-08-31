@@ -1,0 +1,12 @@
+INTRODUCTION TO AI CLASS PROJECT
+For this project, you will need to work in a team of five students each (Not more).   Any assumptions made should be clearly outlined and should not go against the provided instructions. All AI solutions should be implemented in Python using the libraries or algorithms discussed in class. Each team should select one project only
+Project 1
+Design an application that acts as a USIU map to help visitors find routes between buildings or venues such as parking lots, fire assembly points, gates, or outdoor games. It should have all the paths, venues and buildings indicated. The system should be able to advise on a route based on the distance, human or vehicle traffic (This will be a factor of time and day e.g., is it before or after a lesson, is it a weekend, etc.), and wheelchair access. Recommendations should also be based on the mode of transport i.e., is the person driving or walking.  Where more than one option exists, they should all be provided. The application should also be able to advice a user who wishes to go to more than one destination on the best path to take. Include a heuristic option that is based on the Euclidean distance. Include an option that allows the admin to remove a path that is temporarily unusable. Visualize the map (using networkx library – Lesson 3.1, Slide 27), and highlight the current location, suggested path and destination on the map. A sample of such a diagram is shown below:
+ 
+Complete the project by the last class in Week 13. Late submission will not be graded. Marks will be awarded for:
+1.	Use of concepts learnt in class.  (30%)
+2.	Required Functionality. (20%)
+3.	Creativity-addition of functions that were not required to enhance the solution. (10%)
+4.	Submission of a single Python program notebook that is self-descriptive and outlines the role of each member in the group. (20%)
+5.	Submission of a video demo of the project  (20%)
+
