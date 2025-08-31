@@ -111,7 +111,6 @@ python -m flask run
 ````
 
 * **User interface:** [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
-* **Admin login:** [http://127.0.0.1:5000/login](http://127.0.0.1:5000/login)
 * **Admin panel:** [http://127.0.0.1:5000/admin](http://127.0.0.1:5000/admin)
 
 **Default admin password:** `admin123` (change in `app.py` for security)
