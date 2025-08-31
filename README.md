@@ -1,10 +1,5 @@
 # 🧭 USIU Smart Campus Navigator
 
-Absolutely! Here’s a **full professional README** for your USIU Smart Campus Navigator project, integrating all the aspects we discussed, including folder structure, algorithms, traffic factors, A\*, Euclidean distance, visualization, and data sources. I’ve also added your professor as a mentor reference.
-
-```markdown
-# 🏫 USIU Smart Campus Navigator
-
 **Project Overview:**  
 The **USIU Smart Campus Navigator** is a web-based interactive application designed to help students, staff, and visitors navigate the **USIU-Africa campus** efficiently. It provides optimal routes between campus locations, considering accessibility, route type, traffic conditions, and travel time.  
 
