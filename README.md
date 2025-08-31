@@ -50,6 +50,7 @@ USIU-Campus-Navigator/
   - Filter for **wheelchair accessible** paths.  
   - View the suggested route on a dynamic **Folium map**.  
   - Travel time annotated for each route segment, accounting for **traffic**.
+<img width="1546" height="881" alt="image" src="https://github.com/user-attachments/assets/58a2c6eb-9f01-4260-becf-8890b1d5243d" />
 
 - **Admin Functionality**
   - Login with secure password.  
@@ -60,6 +61,7 @@ USIU-Campus-Navigator/
   - **A\*** search algorithm for pathfinding.  
   - **Euclidean distance heuristic** to estimate cost between nodes.  
   - Weighted edges consider **distance**, **average speed**, and **traffic factor**.
+<img width="1359" height="668" alt="image" src="https://github.com/user-attachments/assets/52b47f1b-ed7a-4918-b1d0-1ba4c501eb0d" />
 
 - **Traffic & Accessibility**
   - Pedestrian routes assume ~1.5 m/s, car routes ~10 m/s.  
@@ -76,7 +78,9 @@ USIU-Campus-Navigator/
   - **Red**: suggested path  
   - Travel time annotated along each segment  
 
-- Optional **Matplotlib visualization** to display the network, highlight key nodes, and show traffic conditions.
+- Optional **NetworkX visualization** to display the network, highlight key nodes, and show traffic conditions.
+
+<img width="1589" height="1390" alt="image" src="https://github.com/user-attachments/assets/1375113a-3b03-41fe-a843-528d5208e073" />
 
 ---
 
