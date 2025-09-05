@@ -113,12 +113,10 @@ $env:FLASK_ENV="development"
 # Run the Flask app
 python -m flask run
 ````
-
-* **User interface:** [https://127.0.0.1:5000/](https://38e81215d827.ngrok-free.app
-)
-* **Admin panel:** [https://127.0.0.1:5000/admin](https://38e81215d827.ngrok-free.app/login)
-
-**Default admin password:** `admin123` (change in `app.py` for security)
+## 🚀 Live Demo (via Ngrok)
+Try the project online (temporary links – expire when Ngrok session ends):  
+- **User Interface:** [https://4f9bfc3c14e6.ngrok-free.app/](https://4f9bfc3c14e6.ngrok-free.app/)  
+- **Admin Panel:** [https://4f9bfc3c14e6.ngrok-free.app/login](https://4f9bfc3c14e6.ngrok-free.app/login
 
 ---
 
