@@ -20,10 +20,15 @@ Start-Sleep -Seconds 5
 try {
     $response = Invoke-RestMethod -Uri http://127.0.0.1:4040/api/tunnels
     $url = $response.tunnels | Where-Object {$_.public_url -like "https://*"} | Select-Object -ExpandProperty public_url
-    Write-Host "Your app is running at: $url"
+    
+    Write-Host ""
+    Write-Host "🚀 Your app is running online:"
+    Write-Host "   User link : $url"
+    Write-Host "   Admin link: $url/login"
+    Write-Host ""
 
-    # Open URL in default browser
+    # Open User link in default browser
     Start-Process $url
 } catch {
-    Write-Host "Failed to fetch ngrok URL. Is ngrok running?"
+    Write-Host "❌ Failed to fetch ngrok URL. Is ngrok running?"
 }
