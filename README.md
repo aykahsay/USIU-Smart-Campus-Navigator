@@ -116,9 +116,17 @@ python -m flask run
 ## 🚀 Live Demo (via Ngrok)
 Try the project online (temporary links – expire when Ngrok session ends):  
 - **User Interface:** [https://4f9bfc3c14e6.ngrok-free.app/](https://4f9bfc3c14e6.ngrok-free.app/)  
-- **Admin Panel:** [https://4f9bfc3c14e6.ngrok-free.app/login](https://4f9bfc3c14e6.ngrok-free.app/login
+- **Admin Panel:** [https://4f9bfc3c14e6.ngrok-free.app/login](https://4f9bfc3c14e6.ngrok-free.app/login)  
 
 ---
+### Run Locally
+```powershell
+# Set environment variables (optional)
+$env:FLASK_APP="app.py"
+$env:FLASK_ENV="development"
+
+# Run the Flask app
+python -m flask run
 
 ## ⚙️ Technical Details
 
