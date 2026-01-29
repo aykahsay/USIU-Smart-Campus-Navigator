@@ -157,8 +157,6 @@ time_min = round(time_sec / 60, 1)
 ## 📝 References
 
 * [OpenStreetMap](https://www.openstreetmap.org)
-* Mutanu, Leah, PhD – [USIU Faculty Page](https://www.usiu.ac.ke/1204/mutanu-leah-phd-/?schl=sst)
-
 ---
 
 ## 💡 Future Improvements
